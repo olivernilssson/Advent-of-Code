@@ -2,11 +2,11 @@ def p1(grid):
 
     coordinates = set()
 
-    for row, row in enumerate(grid):
+    for row_index, row in enumerate(grid):
         for column, char in enumerate(row):
             if char.isdigit() or char == ".":
                 continue
-            for i_row in range(row - 1, row + 2):
+            for i_row in range(row_index - 1, row_index + 2):
                 for i_column in range(column - 1, column + 2):
                     if i_row < 0 or i_row >= len(grid) or i_column < 0 or i_column >= len(grid[i_row]) or not grid[i_row][i_column].isdigit():
                         continue
